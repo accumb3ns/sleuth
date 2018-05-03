@@ -152,14 +152,17 @@ check_num_cores <- function(cores) {
   # The technique used here to test if the user is running sleuth from
   # RStudio was taken from the following stackoverflow thread:
   # https://stackoverflow.com/a/17804414
-  if(cores > 1 && Sys.getenv("RSTUDIO") == "1") {
-    warning("It appears that you are running Sleuth from within Rstudio.\n",
-            "Because of concerns with forking processes from a GUI, ",
-            "'num_cores' is being set to 1.\nIf you wish to take ",
-            "advantage of multiple cores, please consider running ",
-            "sleuth from the command line.")
-    cores <- 1
-  }
+  ##
+  ## REMOVED as unnecessary! ~accumb3ns
+  ##
+  ##if(cores > 1 && Sys.getenv("RSTUDIO") == "1") {
+  ##  warning("It appears that you are running Sleuth from within Rstudio.\n",
+  ##          "Because of concerns with forking processes from a GUI, ",
+  ##          "'num_cores' is being set to 1.\nIf you wish to take ",
+  ##          "advantage of multiple cores, please consider running ",
+  ##          "sleuth from the command line.")
+  ##  cores <- 1
+  ##}
 
   cores
 }
